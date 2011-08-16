@@ -16,6 +16,8 @@ assume first one is the broadcaster and others are guests.
 this is something you DO want to hide from people. In this application people CAN NOT see IP information unless they provide an API key.
 
 3) You can kick listeners OR the broadcaster.
+
+4) Supports Icecast.
  
 
 This application is originally written for Razyo (http://razyo.com) by using FatFreeFramework, after the acquisition of Razyo by SosyalRadyo,
