@@ -26,4 +26,4 @@ we needed something more powerful. For these needs we're re-writing (yeah, the b
 Note: This application DOES NOT follow any standards (commenting standards etc.), for now.
 
 ###Need something ready to go today?###
-Then use old directory. (note: you need to know Turkish to use files in the old directory)
+Then use https://github.com/batuhanicoz/razyo-api-server (note: you need to know Turkish to use files in that repo)
