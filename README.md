@@ -24,3 +24,6 @@ This application is originally written for Razyo (http://razyo.com) by using Fat
 we needed something more powerful. For these needs we're re-writing (yeah, the biggest mistake!) that application by using Silex.
 
 Note: This application DOES NOT follow any standards (commenting standards etc.), for now.
+
+###Need something ready to go today?###
+Then use old directory. (note: you need to know Turkish to use files in the old directory)
