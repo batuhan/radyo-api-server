@@ -23,5 +23,4 @@ this is something you DO want to hide from people. In this application people CA
 This application is originally written for Razyo (http://razyo.com) by using FatFreeFramework, after the acquisition of Razyo by SosyalRadyo,
 we needed something more powerful. For these needs we're re-writing (yeah, the biggest mistake!) that application by using Silex.
 
-Notes:
-* This application DOES NOT follow any standards (commenting standards, markdown for readme etc., for now.
+Note: This application DOES NOT follow any standards (commenting standards etc.), for now.
