@@ -17,3 +17,6 @@ $serverinformation = array(
  * notes: for custom, check docs.
  */
 $infosource = 'twitter';
+
+
+$app['debug'] = true;
