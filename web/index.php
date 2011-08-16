@@ -1,7 +1,9 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
+require_once '../includes/silex.phar';
+
+$app = new Silex\Application();
+
+// magic will happen here
+
+$app->run();
