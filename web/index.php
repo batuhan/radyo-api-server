@@ -1,10 +1,6 @@
 <?php
 
-require_once '../includes/silex.phar';
-include 'includes/config.php';
-
-$app = new Silex\Application();
-
-// magic will happen here
+$app = require_once __DIR__.'/../src/bootstrap.php';
+require_once __DIR__.'/../src/app.php';
 
 $app->run();
