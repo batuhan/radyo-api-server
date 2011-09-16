@@ -73,12 +73,9 @@ function get_contents($ip, $port){
 		$final_contents['status'] = FALSE;
 
 	}
-	$test = array(
-		$contents,
-		$final_contents,
-		$numbers
-	);
-	return json_encode($test, TRUE);
+
+
+	return json_encode($final_contents, TRUE);
 }
 		
 header('Content-type: application/json');
