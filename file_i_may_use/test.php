@@ -70,7 +70,8 @@ function get_contents($ip, $port){
 
 	}
 	
-	echo json_encode($final_contents);
+	return json_encode($final_contents);
 }
-
+		
+header('Content-type: application/json');
 echo get_contents($_GET['ip'], $_GET['port']);
