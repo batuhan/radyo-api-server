@@ -6,6 +6,8 @@ $app->get('/', function() use ($app) {
 
 $app->get('/api/{type}/{ip}/{port}', function($type, $ip, $port = 8000) use ($app) {
 	
+	include __DIR__.'/../vendor/simple_html_dom.php';
+	
 	$html = new simple_html_dom();
 	$html->file_get_html('http://'.$ip.':'.$port.'/index.html');
 	foreach($html->find('td font b') as $element) $contents[] = $element->plaintext;
