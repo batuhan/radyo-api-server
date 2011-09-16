@@ -28,7 +28,7 @@ function curl_get_contents($url) {
 
 function get_contents($ip, $port){
 	
-	include 'simple_html_dom.php';
+	include '../vendor/simple_html_dom.php';
 	
 	$html = str_get_html(curl_get_contents('http://'.$ip.':'.$port.'/index.html'));
 	foreach($html->find('td font b') as $element) $contents[] = $element->plaintext;
