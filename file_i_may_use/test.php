@@ -73,7 +73,7 @@ function get_contents($ip, $port){
 		$contents,
 		$final_contents
 	);
-	return $test;
+	return json_encode($test, TRUE);
 }
 		
 header('Content-type: application/json');
