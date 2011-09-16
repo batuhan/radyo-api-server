@@ -4,7 +4,7 @@ $app->get('/', function() use ($app) {
 
 });
 
-$app->get('/api/{type}/{ip}/{port}', function($type, $ip, $port = 8000 use ($app) {
+$app->get('/api/{type}/{ip}/{port}', function($type, $ip, $port = 8000) use ($app) {
 	
 	$html = new simple_html_dom();
 	$html->file_get_html('http://'.$ip.':'.$port.'/index.html');
