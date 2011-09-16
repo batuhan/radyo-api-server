@@ -33,12 +33,12 @@ function get_contents($ip, $port){
 	$html = str_get_html(curl_get_contents('http://'.$ip.':'.$port.'/index.html'));
 	foreach($html->find('td font b') as $element) $contents[] = $element->plaintext;
 
-	preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers[1]);
-	preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[2], $numbers[2]);
-
 	if($contents[0] === 'Server is currently up and public.'){
+		
+		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers[1]);
+		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[2], $numbers[2]);
 
-		$contents = array(
+		$final_contents = array(
 			'status' => TRUE,
 			'listeners' => array(
 				'total' => $numbers[2][0],
@@ -62,15 +62,15 @@ function get_contents($ip, $port){
 
 	}elseif($contents[0] === 'Server is currently up and private.'){
 
-		$contents['status'] = TRUE;
+		$final_contents['status'] = TRUE;
 
 	}else{
 
-		$contents['status'] = FALSE;
+		$final_contents['status'] = FALSE;
 
 	}
 	
-	echo json_encode($contents);
+	echo json_encode($final_contents);
 }
 
 echo get_contents($_GET['ip'], $_GET['port']);
