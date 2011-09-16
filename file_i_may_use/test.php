@@ -35,8 +35,8 @@ function get_contents($ip, $port){
 
 	if($contents[0] === 'Server is currently up and public.'){
 		
-		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers[0]);
-		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[2], $numbers[1]);
+		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers[0], PREG_SET_ORDER);
+		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[2], $numbers[1], PREG_SET_ORDER);
 
 		$total = $numbers[1][0];
 		$max = $numbers[1][1];
