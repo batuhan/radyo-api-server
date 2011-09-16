@@ -1,10 +1,10 @@
 <?php
+error_reporting(0);
 function curl_get_contents($url) {
 	
 	// setting useragent to firefox for shoutcast
 	$useragent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1';
 	
-    
         // this function was found on http://fusionswift.com/blog/2010/02/curl-vs-file_get_contents/
         
 	// Initiate the curl session
@@ -31,7 +31,7 @@ function get_contents($ip, $port){
 	include '../vendor/simple_html_dom.php';
 	
 	$html = str_get_html(curl_get_contents('http://'.$ip.':'.$port.'/index.html'));
-	foreach($html->find('td font b') as $element){ $contents[] = $element->plaintext;}
+	foreach($html->find('td font b') as $element){ $contents[] = $element->plaintext; }
 
 	if($contents[0] === 'Server is currently up and public.'){
 		
@@ -44,7 +44,7 @@ function get_contents($ip, $port){
 				'total' => $numbers_two[0],
 				'unique' => $numbers_two[2],
 				'peak' => $contents[3],
-				'max' => $numbers[2][1],
+				'max' => $numbers_two[1],
 				'average_listen_time' => $contents[4]
 			),
 			'title' => $contents[5],
