@@ -38,9 +38,9 @@ function get_contents($ip, $port){
 		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers[0], PREG_SET_ORDER);
 		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[2], $numbers[1], PREG_SET_ORDER);
 
-		$total = $numbers[1][0];
-		$max = $numbers[1][1];
-		$unique = $numbers[1][2];
+		$total = $numbers[1][0][0];
+		$max = $numbers[1][1][0];
+		$unique = $numbers[1][2][0];
 		
 		$final_contents = array(
 			'status' => TRUE,
@@ -53,7 +53,7 @@ function get_contents($ip, $port){
 			),
 			'title' => $contents[5],
 			'type' => $contents[6],
-			'bitrate' => $numbers[0][0].'kbps',
+			'bitrate' => $numbers[0][0][0].'kbps',
 			'genre' => $contents[7],
 			'url' => $contents[8],
 			'icq' => $contents[9],
