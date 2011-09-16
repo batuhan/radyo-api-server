@@ -8,8 +8,7 @@ $app->get('/api/{type}/{ip}/{port}', function($type, $ip, $port = 8000) use ($ap
 	
 	include __DIR__.'/../vendor/simple_html_dom.php';
 	
-	$html = new simple_html_dom();
-	$html->file_get_html('http://'.$ip.':'.$port.'/index.html');
+	$html = file_get_html('http://'.$ip.':'.$port.'/index.html');
 	foreach($html->find('td font b') as $element) $contents[] = $element->plaintext;
 
 	preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers[1]);
