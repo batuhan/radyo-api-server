@@ -38,18 +38,22 @@ function get_contents($ip, $port){
 		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers[0]);
 		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[2], $numbers[1]);
 
+		$total = $numbers[1][0];
+		$max = $numbers[1][1];
+		$unique = $numbers[1][2];
+		
 		$final_contents = array(
 			'status' => TRUE,
 			'listeners' => array(
-				'total' => $numbers[1][0],
-				'unique' => $numbers[1][2],
+				'total' => $total,
+				'unique' => $unique,
 				'peak' => $contents[3],
-				'max' => $numbers[1][1],
+				'max' => $max,
 				'average_listen_time' => $contents[4]
 			),
 			'title' => $contents[5],
 			'type' => $contents[6],
-			'bitrate' => $numbers[0][1].'kbps',
+			'bitrate' => $numbers[0][0].'kbps',
 			'genre' => $contents[7],
 			'url' => $contents[8],
 			'icq' => $contents[9],
