@@ -35,21 +35,21 @@ function get_contents($ip, $port){
 
 	if($contents[0] === 'Server is currently up and public.'){
 		
-		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers_one);
-		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[2], $numbers_two);
+		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[1], $numbers[0]);
+		preg_match_all ('/[0-9]+(?:\.[0-9]*)?/', $contents[2], $numbers[1]);
 
 		$final_contents = array(
 			'status' => TRUE,
 			'listeners' => array(
-				'total' => $numbers_two[0],
-				'unique' => $numbers_two[2],
+				'total' => $numbers[1][0],
+				'unique' => $numbers[1][2],
 				'peak' => $contents[3],
-				'max' => $numbers_two[1],
+				'max' => $numbers[1][1],
 				'average_listen_time' => $contents[4]
 			),
 			'title' => $contents[5],
 			'type' => $contents[6],
-			'bitrate' => $numbers_one.'kbps',
+			'bitrate' => $numbers[0][1].'kbps',
 			'genre' => $contents[7],
 			'url' => $contents[8],
 			'icq' => $contents[9],
@@ -71,7 +71,8 @@ function get_contents($ip, $port){
 	}
 	$test = array(
 		$contents,
-		$final_contents
+		$final_contents,
+		$numbers
 	);
 	return json_encode($test, TRUE);
 }
