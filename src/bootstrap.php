@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'/../vendor/silex.phar';
+require_once __DIR__.'/../vendor/simple_html_dom.php';
 
 use Silex\Application;
 use Silex\Extension\TwigExtension;
